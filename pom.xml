@@ -19,6 +19,12 @@
             <artifactId>moeserver</artifactId>
             <version>0.1.1</version>
         </dependency>
+
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-testing</artifactId>
+            <version>5.4.32.Final</version>
+        </dependency>
     </dependencies>
     
 </project>
