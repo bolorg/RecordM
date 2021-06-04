@@ -26,11 +26,11 @@ public class Log extends DefaultHandle {
         String category = postBodyJson.getString("category");
         if (category.equals("statistics")) {
             // 站点统计数据
-            System.out.println("STATISTICS RECV ==> " + postBodyJson.getString("data"));
+            System.out.println(System.currentTimeMillis() + " STATISTICS RECV ==> " + postBodyJson.getString("data"));
             result.put("status", 200);
         } else if (category.equals("logErrors")) {
             // 错误信息统计
-            System.out.println("LOGERRORS RECV ==> " + postBodyJson.getString("data"));
+            System.out.println(System.currentTimeMillis() + " LOGERRORS RECV ==> " + postBodyJson.getString("data"));
             result.put("status", 200);
         } else {
             // 未知日志分类
