@@ -38,6 +38,7 @@ public class Log extends DefaultHandle {
             result.put("message", "Not a match category.");
         }
 
+        resp.code(200);
         resp.write(result.toString());
     }
 }
