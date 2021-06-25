@@ -7,7 +7,9 @@ import com.github.timeloveboy.moeserver.IHttpRequest;
 import com.github.timeloveboy.moeserver.IHttpResponse;
 
 import java.io.*;
-import java.util.zip.GZIPInputStream;
+import java.nio.charset.StandardCharsets;
+import java.util.Arrays;
+import java.util.Base64;
 
 public class Log extends DefaultHandle {
 
@@ -33,8 +35,9 @@ public class Log extends DefaultHandle {
                 System.out.println(delay + "ms S ==> " + postBodyJson.getString("data"));
                 result.put("status", 200);
             } else if (category.equals("logErrors")) {
+                String data = postBodyJson.getString("data");
                 // 错误信息统计
-                System.out.println(System.currentTimeMillis() + " L ==> " + postBodyJson.getString("data"));
+                System.out.println(System.currentTimeMillis() + " L ==> " + data);
                 result.put("status", 200);
             } else {
                 // 未知日志分类
